@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(cors())
 
 //connecting mongodb
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/todo-app')
+mongoose.connect(process.env.MONGODB_URI)
 .then(()=>{
     console.log("DataBase Connected");
 })
@@ -95,7 +95,7 @@ app.delete('/todos/:id',async (req,res)=>{
     
 })
 
-const port=process.env.PORT || 8000;
+const port=8000;
 app.listen(port,()=>{
     console.log("server is listening to port "+port);
 })
