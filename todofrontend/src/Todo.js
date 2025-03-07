@@ -16,11 +16,11 @@ export default function Todo() {
     const [doneId,setDoneId]=useState([]);
     const [done,setDone] =useState(-1);
 
-    const apiUrl= process.env.REACT_APP_API_URL || "http://localhost:8000/"
+    const apiUrl= process.env.REACT_APP_API_URL || "http://localhost:8000"
     const handleSubmit=()=>{
         setError("")
         if(title.trim() !== "" && description.trim() !== ""){
-            fetch(apiUrl+"todos",{
+            fetch(apiUrl+"/todos",{
                 method:"POST",
                 headers: {
                     'content-type':'application/json'
@@ -52,7 +52,7 @@ export default function Todo() {
     },[])
 
     const getItem=()=>{
-        fetch(apiUrl+"todos")
+        fetch(apiUrl+"/todos")
         .then((res)=>{
             return res.json()
         })
@@ -69,7 +69,7 @@ export default function Todo() {
     const handleUpdate=() => {
         setError("")
         if(editTitle.trim() !== "" && editDescription.trim() !== ""){
-            fetch(apiUrl+"todos/"+editId,{
+            fetch(apiUrl+"/todos/"+editId,{
                 method:"PUT",
                 headers: {
                     'content-type':'application/json'
@@ -108,7 +108,7 @@ export default function Todo() {
     const handleDelete=(id)=>{
         if(window.confirm('Are you sure want to delete ?')){
 
-            fetch(apiUrl+"todos/"+id,{
+            fetch(apiUrl+"/todos/"+id,{
                 method : "DELETE"
             })
             .then(() =>{
