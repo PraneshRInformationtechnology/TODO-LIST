@@ -16,7 +16,7 @@ export default function Todo() {
     const [doneId,setDoneId]=useState([]);
     const [done,setDone] =useState(-1);
 
-    const apiUrl= "http://localhost:8000"
+    const apiUrl = process.env.REACT_APP_SERVER_API_URL;
     const handleSubmit=()=>{
         setError("")
         if(title.trim() !== "" && description.trim() !== ""){

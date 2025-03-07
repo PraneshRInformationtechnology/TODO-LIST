@@ -7,10 +7,15 @@ const cors=require('cors');
 //Instance of Express
 const app=express(); 
 app.use(express.json())
-app.use(cors())
+const corsOptions ={
+    origin: process.env.APPLICATION_URL,
+    methods : 'GET,HEAD,PUT,PATCH,POST,DELETE'
+}
+
+app.use(cors(corsOptions))
 
 //connecting mongodb
-mongoose.connect('mongodb://localhost:27017/todo-app')
+mongoose.connect(process.env.MONGODB_URI)
 .then(()=>{
     console.log("DataBase Connected");
 })
