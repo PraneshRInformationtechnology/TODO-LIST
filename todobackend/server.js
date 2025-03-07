@@ -15,7 +15,10 @@ const corsOptions ={
 app.use(cors(corsOptions))
 
 //connecting mongodb
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 .then(()=>{
     console.log("DataBase Connected");
 })
@@ -100,7 +103,7 @@ app.delete('/todos/:id',async (req,res)=>{
     
 })
 
-const port=REACT_APP_SERVER_API_URL ||8000;
+const port=8000;
 app.listen(port,()=>{
     console.log("server is listening to port "+port);
 })
