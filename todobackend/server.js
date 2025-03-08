@@ -8,7 +8,7 @@ const cors=require('cors');
 const app=express(); 
 app.use(express.json())
 const corsOptions ={
-    origin: process.env.APPLICATION_URL,
+    origin: process.env.APPLICATION_URL|| '*',
     methods : 'GET,HEAD,PUT,PATCH,POST,DELETE'
 }
 
