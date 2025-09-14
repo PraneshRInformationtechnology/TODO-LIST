@@ -14,9 +14,16 @@ export default function Todo() {
   const totalTasks = todos.length;
   const completedTasks = todos.filter(item => item.completed).length;
 
-  useEffect(() => {
-    getItem();
-  }, []);
+  // ...existing code...
+useEffect(() => {
+  const getItem = async () => {
+    const res = await fetch(apiUrl + "/todos");
+    const data = await res.json();
+    setTodos(data);
+  };
+  getItem();
+}, [apiUrl]);
+// ...existing code...
 
   const getItem = async () => {
     const res = await fetch(apiUrl + "/todos");
