@@ -25,11 +25,11 @@ useEffect(() => {
 }, [apiUrl]);
 // ...existing code...
 
-  const getItem = async () => {
-    const res = await fetch(apiUrl + "/todos");
-    const data = await res.json();
-    setTodos(data);
-  };
+  // const getItem = async () => {
+  //   const res = await fetch(apiUrl + "/todos");
+  //   const data = await res.json();
+  //   setTodos(data);
+  // };
 
   const handleSubmit = async () => {
     if (!title.trim() || !description.trim()) return;
