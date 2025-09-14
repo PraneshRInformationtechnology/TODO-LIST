@@ -1,0 +1,142 @@
+/* Todo.css */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1c2c, #2c2f48);
+  color: #fff;
+}
+
+.todo-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffb347;
+}
+
+/* Form Section */
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.todo-form input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.todo-form button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #ffb347;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.todo-form button:hover {
+  background: #ffa500;
+}
+
+/* Task List */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  background: #2f314e;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.todo-item:hover {
+  transform: translateY(-3px);
+}
+
+.todo-item.completed {
+  background: #3d6649;
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+.todo-text h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.todo-text p {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Buttons */
+.todo-actions button {
+  margin-left: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-weight: bold;
+}
+
+.todo-actions .complete {
+  background: #4caf50;
+  color: #fff;
+}
+
+.todo-actions .edit {
+  background: #ffc107;
+  color: #000;
+}
+
+.todo-actions .delete {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.todo-actions button:hover {
+  opacity: 0.8;
+}
+
+/* Progress Tracker */
+.progress-tracker {
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.progress-bar {
+  background: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 12px;
+  margin-top: 0.5rem;
+}
+
+.progress-fill {
+  background: #4caf50; /* green fill */
+  height: 100%;
+  transition: width 0.4s ease-in-out;
+}
